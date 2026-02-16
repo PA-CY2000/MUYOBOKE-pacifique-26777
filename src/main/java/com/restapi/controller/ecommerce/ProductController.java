@@ -16,8 +16,8 @@ public class ProductController {
     private Long nextId = 11L;
 
     public ProductController() {
-        products.add(new Product(1L, "iPhone 14", "Latest Apple smartphone", 999.99, "Electronics", 50, "Apple"));
-        products.add(new Product(2L, "Samsung Galaxy S23", "Android flagship phone", 899.99, "Electronics", 30, "Samsung"));
+        products.add(new Product(1L, "iPhone 14", "Latest Apple smartphone by Muyoboke Pacifique", 999.99, "Electronics", 50, "Apple"));
+        products.add(new Product(2L, "Samsung Galaxy S23", "Android flagship phone by Tuyishime", 899.99, "Electronics", 30, "Samsung"));
         products.add(new Product(3L, "MacBook Pro", "Professional laptop", 2499.99, "Electronics", 20, "Apple"));
         products.add(new Product(4L, "Nike Air Max", "Running shoes", 129.99, "Footwear", 100, "Nike"));
         products.add(new Product(5L, "Adidas Ultraboost", "Comfortable running shoes", 149.99, "Footwear", 80, "Adidas"));

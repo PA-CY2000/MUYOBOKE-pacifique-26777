@@ -16,8 +16,8 @@ public class MenuController {
     private Long nextId = 9L;
 
     public MenuController() {
-        menuItems.add(new MenuItem(1L, "Caesar Salad", "Fresh romaine lettuce with caesar dressing", 8.99, "Appetizer", true));
-        menuItems.add(new MenuItem(2L, "Garlic Bread", "Toasted bread with garlic butter", 5.99, "Appetizer", true));
+        menuItems.add(new MenuItem(1L, "Caesar Salad", "Fresh romaine lettuce with caesar dressing by Muyoboke Pacifique", 8.99, "Appetizer", true));
+        menuItems.add(new MenuItem(2L, "Garlic Bread", "Toasted bread with garlic butter by Tuyishime", 5.99, "Appetizer", true));
         menuItems.add(new MenuItem(3L, "Grilled Chicken", "Marinated grilled chicken breast", 15.99, "Main Course", true));
         menuItems.add(new MenuItem(4L, "Beef Steak", "Premium beef steak with vegetables", 24.99, "Main Course", true));
         menuItems.add(new MenuItem(5L, "Pasta Carbonara", "Creamy pasta with bacon", 12.99, "Main Course", false));

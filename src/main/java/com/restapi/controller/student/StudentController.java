@@ -17,7 +17,7 @@ public class StudentController {
 
     public StudentController() {
         students.add(new Student(26777L, "Muyoboke", "Pacifique", "muyoboke.pacifique@email.com", "Computer Science", 3.8));
-        students.add(new Student(26778L, "Jane", "Smith", "jane.smith@email.com", "Computer Science", 3.6));
+        students.add(new Student(26888L, "Tuyishime", "Jean", "tuyishime@email.com", "Computer Science", 3.6));
         students.add(new Student(26779L, "Mike", "Johnson", "mike.j@email.com", "Business", 3.2));
         students.add(new Student(26780L, "Sarah", "Williams", "sarah.w@email.com", "Engineering", 3.9));
         students.add(new Student(26781L, "Tom", "Brown", "tom.b@email.com", "Computer Science", 3.4));

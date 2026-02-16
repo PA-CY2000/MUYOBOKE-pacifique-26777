@@ -16,8 +16,8 @@ public class TaskController {
     private Long nextId = 4L;
 
     public TaskController() {
-        tasks.add(new Task(1L, "Complete assignment", "Finish Spring Boot REST API assignment", false, "HIGH", "2024-12-20"));
-        tasks.add(new Task(2L, "Study for exam", "Review chapters 1-5", false, "MEDIUM", "2024-12-22"));
+        tasks.add(new Task(1L, "Complete assignment", "Finish Spring Boot REST API assignment - Muyoboke Pacifique", false, "HIGH", "2024-12-20"));
+        tasks.add(new Task(2L, "Study for exam", "Review chapters 1-5 - Tuyishime", false, "MEDIUM", "2024-12-22"));
         tasks.add(new Task(3L, "Buy groceries", "Get milk, eggs, and bread", true, "LOW", "2024-12-15"));
     }
 

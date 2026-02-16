@@ -16,8 +16,8 @@ public class BookController {
     private Long nextId = 4L;
 
     public BookController() {
-        books.add(new Book(1L, "Clean Code", "Robert Martin", "978-0132350884", 2008));
-        books.add(new Book(2L, "Effective Java", "Joshua Bloch", "978-0134685991", 2017));
+        books.add(new Book(1L, "Clean Code", "Muyoboke Pacifique", "978-0132350884", 2008));
+        books.add(new Book(2L, "Effective Java", "Tuyishime", "978-0134685991", 2017));
         books.add(new Book(3L, "Spring in Action", "Craig Walls", "978-1617294945", 2018));
     }
 
