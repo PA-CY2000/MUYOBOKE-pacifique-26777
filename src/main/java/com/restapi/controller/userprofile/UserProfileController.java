@@ -19,7 +19,7 @@ public class UserProfileController {
     public UserProfileController() {
         users.add(new UserProfile(26777L, "muyoboke_pacifique", "muyoboke.pacifique@example.com", "Muyoboke Pacifique", 22, "Rwanda", "Software Engineering Student", true));
         users.add(new UserProfile(26888L, "tuyishime", "tuyishime@example.com", "Tuyishime Jean", 23, "Rwanda", "Computer Science Student", true));
-        users.add(new UserProfile(26779L, "mike_wilson", "mike@example.com", "Mike Wilson", 32, "UK", "Product manager", false));
+        users.add(new UserProfile(26779L, "gabriel_rubayiza", "gabriel.rubayiza@example.com", "Gabriel Rubayiza", 24, "Rwanda", "Business Student", false));
     }
 
     @GetMapping
