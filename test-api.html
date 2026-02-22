@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product API Tester</title>
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 800px; margin: 0 auto; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background: #0056b3; }
+        .result { background: #f4f4f4; padding: 15px; margin: 10px 0; border-radius: 4px; white-space: pre-wrap; }
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0; box-sizing: border-box; }
+        h3 { color: #333; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Product API Tester</h1>
+    
+    <h3>1. CREATE Product</h3>
+    <button onclick="createProduct()">Create Product</button>
+    
+    <h3>2. GET All Products</h3>
+    <button onclick="getAllProducts()">Get All Products</button>
+    
+    <h3>3. GET Product by ID</h3>
+    <input type="number" id="getProductId" placeholder="Enter Product ID" value="1">
+    <button onclick="getProductById()">Get Product</button>
+    
+    <h3>4. UPDATE Product</h3>
+    <input type="number" id="updateProductId" placeholder="Enter Product ID" value="1">
+    <button onclick="updateProduct()">Update Product</button>
+    
+    <h3>5. DELETE Product</h3>
+    <input type="number" id="deleteProductId" placeholder="Enter Product ID" value="1">
+    <button onclick="deleteProduct()">Delete Product</button>
+    
+    <h3>Response:</h3>
+    <div class="result" id="result">Results will appear here...</div>
+
+    <script>
+        const API_URL = 'http://localhost:8081/api/products';
+
+        function showResult(data, status) {
+            document.getElementById('result').textContent = 
+                `Status: ${status}\n\n` + JSON.stringify(data, null, 2);
+        }
+
+        function createProduct() {
+            fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: "Laptop",
+                    description: "Gaming laptop",
+                    price: 1200.50,
+                    category: "Electronics",
+                    stockQuantity: 15,
+                    brand: "Dell"
+                })
+            })
+            .then(res => res.json().then(data => ({ status: res.status, data })))
+            .then(({ status, data }) => showResult(data, status))
+            .catch(err => showResult({ error: err.message }, 'Error'));
+        }
+
+        function getAllProducts() {
+            fetch(API_URL)
+            .then(res => res.json().then(data => ({ status: res.status, data })))
+            .then(({ status, data }) => showResult(data, status))
+            .catch(err => showResult({ error: err.message }, 'Error'));
+        }
+
+        function getProductById() {
+            const id = document.getElementById('getProductId').value;
+            fetch(`${API_URL}/${id}`)
+            .then(res => res.json().then(data => ({ status: res.status, data })))
+            .then(({ status, data }) => showResult(data, status))
+            .catch(err => showResult({ error: err.message }, 'Error'));
+        }
+
+        function updateProduct() {
+            const id = document.getElementById('updateProductId').value;
+            fetch(`${API_URL}/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: "Updated Laptop",
+                    description: "High-end gaming laptop",
+                    price: 1100.00,
+                    category: "Electronics",
+                    stockQuantity: 20,
+                    brand: "Dell"
+                })
+            })
+            .then(res => res.json().then(data => ({ status: res.status, data })))
+            .then(({ status, data }) => showResult(data, status))
+            .catch(err => showResult({ error: err.message }, 'Error'));
+        }
+
+        function deleteProduct() {
+            const id = document.getElementById('deleteProductId').value;
+            fetch(`${API_URL}/${id}`, {
+                method: 'DELETE'
+            })
+            .then(res => {
+                if (res.status === 204) {
+                    return { status: res.status, data: { message: 'Product deleted successfully' } };
+                }
+                return res.json().then(data => ({ status: res.status, data }));
+            })
+            .then(({ status, data }) => showResult(data, status))
+            .catch(err => showResult({ error: err.message }, 'Error'));
+        }
+    </script>
+</body>
+</html>
